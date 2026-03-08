@@ -14,7 +14,7 @@ lint:
 	bash -c "cd $(GRADLE_DIR) && ./gradlew checkstyleMain checkstyleTest"
 
 report:
-	bash -c "cd $(GRADLE_DIR) && ./gradlew jacocoTestReport --info"
+	bash -c "cd $(GRADLE_DIR) && ./gradlew jacocoTestReport"
 
 sonar:
 	bash -c "cd $(GRADLE_DIR) && ./gradlew sonar -Dsonar.token=$$SONAR_TOKEN"
