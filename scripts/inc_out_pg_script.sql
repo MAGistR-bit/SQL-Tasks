@@ -9,60 +9,52 @@ CREATE TABLE Income (
 	point smallint NOT NULL ,
 	date timestamp NOT NULL ,
 	inc decimal(12,2) NOT NULL 
-) 
-;
+);
 
 CREATE TABLE Outcome (
 	code int NOT NULL ,
 	point smallint NOT NULL ,
 	date timestamp NOT NULL ,
 	out decimal(12,2) NOT NULL 
-) 
-;
+);
 
 CREATE TABLE Income_o (
 	point smallint NOT NULL ,
 	date timestamp NOT NULL ,
 	inc decimal(12,2) NOT NULL 
-) 
-;
+);
 
 CREATE TABLE Outcome_o (
 	point smallint NOT NULL ,
 	date timestamp NOT NULL ,
 	out decimal(12,2) NOT NULL 
-) 
-;
+);
 
 ALTER TABLE Income  ADD 
 	CONSTRAINT PK_Income PRIMARY KEY 
 	(
 		code
-	)   
-;
+	);
 
 ALTER TABLE Outcome  ADD 
 	CONSTRAINT PK_Outcome PRIMARY KEY 
 	(
 		code
-	)   
-;
+	);
 
 ALTER TABLE Income_o  ADD 
 	CONSTRAINT PK_Income_o PRIMARY KEY 
 	(
 		point,
 		date
-	)   
-;
+	);
 
 ALTER TABLE Outcome_o  ADD 
 	CONSTRAINT PK_Outcome_o PRIMARY KEY 
 	(
 		point,
 		date
-	)   
-;
+	);
                                                                                                                                                                                                                                                                  
 ----Income------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 insert into Income values(1,1,'20010322 00:00:00.000','15000.00');

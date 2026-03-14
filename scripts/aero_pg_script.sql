@@ -7,22 +7,19 @@ drop table company;
 CREATE TABLE Company (
 	ID_comp int NOT NULL ,
 	name char (10) NOT NULL 
-)
-;
+);
 
 CREATE TABLE Pass_in_trip (
 	trip_no int NOT NULL ,
 	date timestamp NOT NULL ,
 	ID_psg int NOT NULL ,
 	place char (10) NOT NULL 
-)
-;
+);
 
 CREATE TABLE Passenger (
 	ID_psg int NOT NULL ,
 	name char (20) NOT NULL 
-)
-;
+);
 
 CREATE TABLE Trip (
 	trip_no int NOT NULL ,
@@ -32,15 +29,13 @@ CREATE TABLE Trip (
 	town_to char (25) NOT NULL ,
 	time_out timestamp NOT NULL ,
 	time_in timestamp NOT NULL 
-)
-;
+);
 
 ALTER TABLE Company  ADD 
 	CONSTRAINT PK2 PRIMARY KEY   
 	(
 		ID_comp
-	)  
-;
+	);
 
 ALTER TABLE Pass_in_trip ADD 
 	CONSTRAINT PK_pt PRIMARY KEY   
@@ -48,22 +43,19 @@ ALTER TABLE Pass_in_trip ADD
 		trip_no,
 		date,
 		ID_psg
-	)  
-;
+	);
 
 ALTER TABLE Passenger  ADD 
 	CONSTRAINT PK_psg PRIMARY KEY   
 	(
 		ID_psg
-	)  
-;
+	);
 
 ALTER TABLE Trip  ADD 
 	CONSTRAINT PK_t PRIMARY KEY   
 	(
 		trip_no
-	)  
-;
+	);
 
 ALTER TABLE Pass_in_trip ADD 
 	CONSTRAINT FK_Pass_in_trip_Passenger FOREIGN KEY 
@@ -79,8 +71,7 @@ ALTER TABLE Pass_in_trip ADD
 		trip_no
 	) REFERENCES Trip (
 		trip_no
-	)
-;
+	);
 
 ALTER TABLE Trip ADD 
 	CONSTRAINT FK_Trip_Company FOREIGN KEY 
@@ -88,8 +79,7 @@ ALTER TABLE Trip ADD
 		ID_comp
 	) REFERENCES Company (
 		ID_comp
-	)
-;
+	);
                                                                                                                                                                                                                                                                  
 ----Company------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 insert into Company values(1,'Don_avia  ');

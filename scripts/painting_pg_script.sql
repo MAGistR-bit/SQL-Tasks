@@ -8,21 +8,18 @@ CREATE TABLE utB (
 	B_Q_ID int NOT NULL ,
 	B_V_ID int NOT NULL ,
 	B_VOL smallint NOT NULL 
-) 
-;
+);
 
 CREATE TABLE utQ (
 	Q_ID int NOT NULL ,
 	Q_NAME varchar (35) NOT NULL 
-) 
-;
+);
 
 CREATE TABLE utV (
 	V_ID int NOT NULL ,
 	V_NAME varchar (35) NOT NULL ,
 	V_COLOR char (1) NOT NULL 
-) 
-;
+);
 
 ALTER TABLE utB ADD 
 	CONSTRAINT PK_utB PRIMARY KEY  
@@ -30,22 +27,19 @@ ALTER TABLE utB ADD
 		B_DATETIME,
 		B_Q_ID,
 		B_V_ID
-	)   
-;
+	);
 
 ALTER TABLE utQ ADD 
 	CONSTRAINT PK_utQ PRIMARY KEY 
 	(
 		Q_ID
-	)   
-;
+	);
 
 ALTER TABLE utV ADD 
 	CONSTRAINT PK_utV PRIMARY KEY  
 	(
 		V_ID
-	)   
-;
+	);
 
 ALTER TABLE utB ADD 
 	CONSTRAINT FK_utB_utQ FOREIGN KEY 
@@ -61,8 +55,7 @@ ALTER TABLE utB ADD
 		B_V_ID
 	) REFERENCES utV (
 		V_ID
-	)
-;
+	);
                                                                                                                                                                                                                                                                 
 ----utQ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 insert into utQ values(1,'Square # 01');

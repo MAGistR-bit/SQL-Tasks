@@ -7,8 +7,7 @@ drop table battles;
 CREATE TABLE Battles (
 	name varchar (20) NOT NULL ,
 	date timestamp NOT NULL 
-) 
-;
+);
 
 CREATE TABLE Classes (
 	class varchar (50) NOT NULL ,
@@ -17,51 +16,44 @@ CREATE TABLE Classes (
 	numGuns smallint NULL ,
 	bore real NULL ,
 	displacement int NULL 
-) 
-;
+);
 
 CREATE TABLE Ships (
 	name varchar (50) NOT NULL ,
 	class varchar (50) NOT NULL ,
 	launched smallint NULL 
-) 
-;
+);
 
 CREATE TABLE Outcomes (
 	ship varchar (50) NOT NULL ,
 	battle varchar (20) NOT NULL ,
 	result varchar (10) NOT NULL 
-) 
-;
+);
 
 ALTER TABLE Battles ADD 
 	CONSTRAINT PK_Battles PRIMARY KEY 
 	(
 		name
-	)   
-;
+	);
 
 ALTER TABLE Classes ADD 
 	CONSTRAINT PK_Classes PRIMARY KEY
 	(
 		class
-	)   
-;
+	);
 
 ALTER TABLE Ships ADD 
 	CONSTRAINT PK_Ships PRIMARY KEY  
 	(
 		name
-	)   
-;
+	);
 
 ALTER TABLE Outcomes ADD 
 	CONSTRAINT PK_Outcomes PRIMARY KEY
 	(
 		ship,
 		battle
-	)   
-;
+	);
 
 ALTER TABLE Ships ADD 
 	CONSTRAINT FK_Ships_Classes FOREIGN KEY 
@@ -69,8 +61,7 @@ ALTER TABLE Ships ADD
 		class
 	) REFERENCES Classes (
 		class
-	) 
-;
+	);
 
 ALTER TABLE Outcomes ADD 
 	CONSTRAINT FK_Outcomes_Battles FOREIGN KEY 
@@ -78,8 +69,7 @@ ALTER TABLE Outcomes ADD
 		battle
 	) REFERENCES Battles (
 		name
-	)
-;
+	);
                                                                                                                                                                                                                                                                
 ----Classes------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 insert into Classes values('Bismarck','bb','Germany',8,15,42000);
@@ -99,8 +89,8 @@ insert into Battles values('Guadalcanal','19421115 00:00:00.000');
 insert into Battles values('North Atlantic','19410525 00:00:00.000');
 insert into Battles values('North Cape','19431226 00:00:00.000');
 insert into Battles values('Surigao Strait','19441025 00:00:00.000');
-insert into battles values ('#Cuba62a'   , '19621020');
-insert into battles values ('#Cuba62b'   , '19621025');
+insert into battles values ('#Cuba62a','19621020');
+insert into battles values ('#Cuba62b','19621025');
 
 ;
 
